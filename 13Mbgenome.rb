@@ -8,19 +8,19 @@ require 'PMeth'
 Dir.mkdir(File.join(Dir.home, "/Correlations/genomes/#{name}"))
 
 # Create the lists of homozygous and heterozygous SNPs
-hm_r = 'hm <- rnorm(1000, 500000, 1000)' # Causative SNP at/near 10000
-ht_r = 'ht <- runif(1700, 1, 1000000)'   # Genome length of 10000
+hm_r = 'hm <- rnorm(13000, 6500000, 1000)' # Causative SNP at/near 10000
+ht_r = 'ht <- runif(13000, 1, 13000000)'   # Genome length of 10000
 hm, ht = ModelGenome::get_snps(hm_r, ht_r)
 snp_pos = [hm, ht].flatten
 
 puts "There are #{hm.length} homozygous SNPs"
 puts "There are #{ht.length} heterozygous SNPs"
-puts "Is there a SNP at the centre of the distribution? -- #{snp_pos.include?(500000)}"
+puts "Is there a SNP at the centre of the distribution? -- #{snp_pos.include?(6500000)}"
 
 arabidopsis_c4 = ModelGenome::fasta_to_char_array("TAIR10_chr4.fasta")
 puts "Creating the genome..."
-small_genome = arabidopsis_c4[-1000000..-1] # Genome length of 100 kb
-contig_size = 1000 # 100-200 bp
+small_genome = arabidopsis_c4[-13000000..-1] # Genome length of 100 kb
+contig_size = 13000 # 100-200 bp
 puts "...and generating the fragments"
 frags = ModelGenome::get_frags(small_genome, contig_size)
 
@@ -46,7 +46,7 @@ start_pop << fastaformat_array
 	end
 	start_pop = adj_pop
 end
-puts start_pop
+
 
 fastaformat_array_shuf = start_pop
 vcf = ModelGenome::vcf_array(frags, pos_on_frags, snp_pos_all, hm, ht)
