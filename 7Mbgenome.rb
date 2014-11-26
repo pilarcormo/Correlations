@@ -20,7 +20,7 @@ puts "Is there a SNP at the centre of the distribution? -- #{snp_pos.include?(50
 arabidopsis_c4 = ModelGenome::fasta_to_char_array("TAIR10_chr4.fasta")
 puts "Creating the genome..."
 small_genome = arabidopsis_c4[-7000000..-1] # Genome length of 100 kb
-contig_size = 7000 # 100-200 bp
+contig_size = 3500 # 100-200 bp
 puts "...and generating the fragments"
 frags = ModelGenome::get_frags(small_genome, contig_size)
 

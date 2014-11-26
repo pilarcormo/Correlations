@@ -14,7 +14,6 @@ class ReformRatio
 		return ids, lengths
 	end
 
-
 	# Input: VCF file
 	# Output 0: Array of VCF chrom field (fragment identifiers)
 	# Output 1: Array of VCF pos field (positions of snps on fragments)

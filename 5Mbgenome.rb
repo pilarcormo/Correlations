@@ -15,12 +15,12 @@ snp_pos = [hm, ht].flatten
 
 puts "There are #{hm.length} homozygous SNPs"
 puts "There are #{ht.length} heterozygous SNPs"
-puts "Is there a SNP at the centre of the distribution? -- #{snp_pos.include?(500000)}"
+puts "Is there a SNP at the centre of the distribution? -- #{snp_pos.include?(5000000)}"
 
 arabidopsis_c4 = ModelGenome::fasta_to_char_array("TAIR10_chr4.fasta")
 puts "Creating the genome..."
 small_genome = arabidopsis_c4[-5000000..-1] # Genome length of 100 kb
-contig_size = 5000 # 100-200 bp
+contig_size = 2500 # 100-200 bp
 puts "...and generating the fragments"
 frags = ModelGenome::get_frags(small_genome, contig_size)
 

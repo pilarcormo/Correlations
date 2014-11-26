@@ -4,9 +4,6 @@
 
 require_relative 'count_ratio'
 require_relative 'lib/reform_ratio'
-require 'pp'
-require 'bio'
-require 'bio-samtools'
 require 'PMeth'
 require 'csv'
 
@@ -21,7 +18,9 @@ fasta_shuffle = "genomes/#{dataset}/frags_shuffled.fasta"
 #############################################################
 
 fasta = ReformRatio::fasta_array(fasta_file)
+
 snp_data = ReformRatio.get_snp_data(vcf_file)
+
 ht, hm = ReformRatio.perm_pos(fasta, snp_data)
 
 fasta_shuffle = ReformRatio::fasta_array(fasta_shuffle)
@@ -36,7 +35,7 @@ end
 list = (5..1000)
 fitness = []
 list.each do |div|
-	if div % 2 == 0 
+	if div % 5 == 0 
 		expected_ratios = FitnessScore.ratio(hm, ht, div, genome_length) # Array of expected ratios (floats) of homozygous to heterozygous SNPs for each division of the genome
 		ratios = FitnessScore.ratio(ht2, hm2, div, genome_length)
 		myr = RinRuby.new(echo = false)
