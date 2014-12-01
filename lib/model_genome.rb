@@ -1,8 +1,6 @@
 #encoding: utf-8
 class ModelGenome
 
-	require 'rubygems'
-	require 'bio-samtools'
 	require 'bio'
 	require 'rinruby'
 
