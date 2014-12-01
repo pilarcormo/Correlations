@@ -9,7 +9,7 @@ Dir.mkdir(File.join(Dir.home, "/Correlations/genomes/#{name}"))
 
 # Create the lists of homozygous and heterozygous SNPs
 hm_r = 'hm <- rnorm(11000, 5500000, 1000)' # Causative SNP at/near 10000
-ht_r = 'ht <- runif(11000, 1, 11000000)'   # Genome length of 10000
+ht_r = 'ht <- runif(5500, 1, 11000000)'   # Genome length of 10000
 hm, ht = ModelGenome::get_snps(hm_r, ht_r)
 snp_pos = [hm, ht].flatten
 
@@ -20,7 +20,7 @@ puts "Is there a SNP at the centre of the distribution? -- #{snp_pos.include?(50
 arabidopsis_c4 = ModelGenome::fasta_to_char_array("TAIR10_chr4.fasta")
 puts "Creating the genome..."
 small_genome = arabidopsis_c4[-11000000..-1] # Genome length of 100 kb
-contig_size = 5500 # 100-200 bp
+contig_size = 11000 # 100-200 bp
 puts "...and generating the fragments"
 frags = ModelGenome::get_frags(small_genome, contig_size)
 
