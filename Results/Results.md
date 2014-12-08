@@ -51,27 +51,7 @@ We observe a clear trend of improvement in the correlation (red colour) when inc
 
 However, using a smaller number of contigs seems to give better correlation values even though the difference between 1300 or 3000 contigs is not very representative. For that reason, I chose 700 contigs to the next part of the experiment.
 
-I realised the number of swaps shouldn't be the for all the number of contigs. When I increase the number of contigs, I should increase in the same proportion the number of swappings.
 
-Therefore, for the 1300 contigs:
-
-```
-4.times do
-	start_pop.each do |perm|
-		70.times do
-			perm = PMeth.adjacent_swap(perm) 
-```
-
-And for the 3000 contigs: 
-
-```
-9.times do
-	start_pop.each do |perm|
-		70.times do
-			perm = PMeth.adjacent_swap(perm) 
-```
-
-Resulting in new plots: 
 
 
 
@@ -81,6 +61,7 @@ For the following results, I used 700 contigs to build the genomes.
 
 ###1. Same number of homozygous and heterozygous SNPs. 
 ![Image](https://github.com/pilarcormo/Correlations/blob/master/Results/Rplot.SNP_density_brewer.png?raw=false)
+
 
 ###2. Increase ht SNP density while keeping the number of hm SNPs constant
 
