@@ -79,9 +79,14 @@ Effect of the SNP density
 ----
 For the following results, I used 700 contigs to build the genomes. 
 
-1. Same number of homozygous and heterozygous SNPs. 
+###1. Same number of homozygous and heterozygous SNPs. 
 ![Image](https://github.com/pilarcormo/Correlations/blob/master/Results/Rplot.SNP_density_brewer.png?raw=false)
-2. Increase ht SNP density while keeping the number of hm SNPs constant
+
+###2. Increase ht SNP density while keeping the number of hm SNPs constant
+
+![Image](https://github.com/pilarcormo/Correlations/blob/master/Results/Rplot.Ht_Hmconstant.png?raw=false)
+
+
 
 Future?
 3. Increase hm SNP density while keeping the number of ht SNPs constant
