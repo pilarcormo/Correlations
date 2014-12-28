@@ -8,8 +8,8 @@ require 'PMeth'
 Dir.mkdir(File.join(Dir.home, "/Correlations/genomes/#{name}"))
 
 # Create the lists of homozygous and heterozygous SNPs
-hm_r = 'hm <- rnorm(3000, 1500000, 1000)' # Causative SNP at/near 10000
-ht_r = 'ht <- runif(1500, 1, 3000000)'   # Genome length of 10000
+hm_r = 'hm <- rnorm(3000, 1500000, 3000)' # Causative SNP at/near 10000
+ht_r = 'ht <- runif(6000, 1, 3000000)'   # Genome length of 10000
 hm, ht = ModelGenome::get_snps(hm_r, ht_r)
 snp_pos = [hm, ht].flatten
 

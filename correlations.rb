@@ -28,10 +28,10 @@ ht2, hm2 =ReformRatio.perm_pos(fasta_shuffle, snp_data)
 
 genome_length = ReformRatio::genome_length(fasta_file)
 
-CSV.open("genomes/#{dataset}/#{name}.csv", "ab") do |csv|
-	csv << ["Genome length", "Divisions", "Fitness"]
-end 
-list = (993..1000)
+# CSV.open("genomes/#{dataset}/#{name}.csv", "ab") do |csv|
+# 	csv << ["Genome length", "Divisions", "Fitness"]
+# end 
+list = (526..1000)
 fitness = []
 list.each do |div|
 	if div % 2 == 0 

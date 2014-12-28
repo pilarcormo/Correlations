@@ -2,14 +2,14 @@
 require_relative 'lib/model_genome'
 require_relative 'lib/write_it'
 name = ARGV[0]
-require 'PMeth'
+require 'pmeth'
 
 # make the directory to put data files into
 Dir.mkdir(File.join(Dir.home, "/Correlations/genomes/#{name}"))
 
 # Create the lists of homozygous and heterozygous SNPs
-hm_r = 'hm <- rnorm(1000, 500000, 1000)' # Causative SNP at/near 10000
-ht_r = 'ht <- runif(500, 1, 1000000)'   # Genome length of 10000
+hm_r = 'hm <- rnorm(1200, 500000, 1000)' # Causative SNP at/near 10000
+ht_r = 'ht <- runif(2000, 1, 1000000)'   # Genome length of 10000
 hm, ht = ModelGenome::get_snps(hm_r, ht_r)
 snp_pos = [hm, ht].flatten
 
