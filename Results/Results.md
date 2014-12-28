@@ -69,9 +69,9 @@ It seems that a high SNP frequency has a possitive effect in the fitness score.
 Conclusions 
 ----
 
-- In general, the correlation between the ratios worsens when using more than 250 divisions.
+- In general, the correlation between the hm and ht ratios gets worse over 250 divisions.
 - The contig size has no significant effect on the correlation.
 - When the number of divisions increases, the best correlations are observed in larger genomes. 
-- In general, the SNP frequency has no effect on the correlation, although the highest frequency used gave better correlation results. 
+- In general, the SNP frequency has no effect on the correlation, although the highest frequency seems to give better correlation results. 
 
 
